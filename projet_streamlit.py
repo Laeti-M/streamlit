@@ -21,6 +21,8 @@ if options == 'Contexte et objectifs du projet' :
     st.title("Projet Be App'Py 😀") 
     st.write("Hello!")
     st.markdown("## Contexte du projet")
+    st.write("Bonjour!")
+    st.write("Hola!")
     st.write("Aujourd’hui le rapport sur le bonheur dans le monde (**World Happiness Report** https://worldhappiness.report/) est une enquête de référence sur l'état du bonheur dans le monde. Le rapport continue de gagner en reconnaissance mondiale, les gouvernements, les organisations et la société civile utilisant de plus en plus les indicateurs de bonheur pour éclairer leurs décisions politiques. Des experts dans divers domaines - économie, psychologie, analyse d'enquêtes, statistiques nationales, santé, politiques publiques et autres - décrivent comment les mesures du bien-être peuvent être utilisées efficacement pour évaluer les progrès des nations. Les rapports passent en revue l'état du bonheur dans le monde d'aujourd'hui et montrent comment la nouvelle science du bonheur explique les variations personnelles et nationales du bonheur.")
     st.markdown("## Objectifs")
     st.write("Deux objectifs ont été définis pour ce projet :"
