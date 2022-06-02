@@ -19,7 +19,8 @@ options=st.sidebar.radio("Options : " ,['Contexte et objectifs du projet','Prés
 if options == 'Contexte et objectifs du projet' :
     st.image('image.jpg', width=400)
     st.title("Projet Be App'Py 😀") 
-    st.write("Hello Hello!")
+    st.write("Hello!")
+    st.write("Ciao!")
     st.markdown("## Contexte du projet")
     st.write("Bonjour!")
     st.write("Hola!")
