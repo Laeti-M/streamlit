@@ -11,7 +11,7 @@ from sklearn.cluster import KMeans
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression, RidgeCV, LassoCV, ElasticNetCV
 from sklearn.metrics import mean_squared_error
-import openyxl
+import openpyxl
 
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
