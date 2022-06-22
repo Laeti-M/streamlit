@@ -90,6 +90,37 @@ if options == 'Visualisations' :
     
 if options == 'PCA et clustering':  
     st.title('PCA et clustering')
+    st.write("""
+    L'analyse en composantes principales (PCA pour Principal Component Analysis) est une méthode de réduction 
+    de dimension qui consiste à réduire la complexité superflue d'un jeu de données en projetant 
+    ses données dans un espace de plus petite dimension.
+             """)
+    with st.expander("En savoir plus sur la PCA :"):
+        st.write("""
+    Il s’agit de résumer l’information contenue dans un ensemble de données en un certain nombre de variables synthétiques, combinaisons linéaires des variables originelles : ce sont les Composantes Principales.
+    L’enjeu est généralement de réduire de manière significative la dimension du jeu de données tout
+    en conservant au maximum l'information véhiculée par les données. On parle de part de variance expliquée.
+    Le but ici est de permettre d'accélérer l'apprentissage et de réduire le risque d'overfitting lié au 
+    surplus de dimensions.
+    """)
+        st.markdown("👉 https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales")
+    st.write("""
+    Une tâche fréquente en analyse de données consiste, à partir d'un ensemble d'observations,
+    à créer des groupes d'individus (clusters) de telle sorte que les individus d'un groupe donné aient tendance à être similaires, 
+    et en même temps aient tendance à être différents des individus des autres groupes.
+    Les algorithmes de classification non supervisée répondent à cette tâche, ils utilisent un ensemble de données non-étiquetées ou non-labellisées et recherchent les structures naturelles dans les données.
+             """)
+    with st.expander("En savoir plus sur le clustering :"):
+        st.write("""
+    L'algorithme K-Means vise à diviser tous les points du jeu de données en k groupes, appelés clusters, homogènes et compacts. 
+    Pour ce faire il va répéter les opérations suivantes pour obtenir les meilleurs résultats :
+    - Choisir k centroïdes aléatoirement
+    - Calculer les distances avec les k-centroïdes pour chaque point du dataset
+    - Assigner chaque point au centroïde le plus proche
+    - Actualiser les centroïdes comme centre des nouveaux cluster obtenus
+    """)
+        st.markdown("👉 https://fr.wikipedia.org/wiki/K-moyennes")
+        
     st.markdown('### Méthodes : ')
     st.write('La PCA a été appliqué sur tout le dataset, excepté la variable cible (Life Ladder) et la variable country name.')
     st.write('KMeans a ensuite été utilisé sur les données issues de la PCA, pour visualiser les 4 clusters créés en 2D, visibles ci-dessous.')
@@ -159,6 +190,13 @@ if options == 'PCA et clustering':
         plt.setp(ax1.get_xticklabels(), rotation=30, ha="right")
         st.pyplot(fig)
         
+        st.write("""
+        Le cluster n°1 (a droite sur le graphique), correspond majoritairement aux pays de la région Afrique sub-saharienne.
+        On peut observer avec les boxplots, que ce cluster regroupe les pays avec les scores les plus faibles de bonheur,
+        ainsi que pour le PIB/hab. On retrouve une grande hétérogénéité pour la variable
+        corruption avec beaucoup d'outliers, tout comme pour générosité ou même le PIB.
+                 """)
+        
     elif number_cluster == 2 :
         fig=plt.figure(figsize = (10,5))
         spec = gridspec.GridSpec(ncols=2, nrows=1,
@@ -184,6 +222,13 @@ if options == 'PCA et clustering':
         plt.setp(ax1.get_xticklabels(), rotation=30, ha="right")
         st.pyplot(fig);
         
+        st.write("""
+        Le cluster n°2 (a gauche sur le graphique), correspond majoritairement aux pays de la région Europe de l'Ouest.
+        On peut observer avec les boxplots, que ce cluster regroupe les pays avec les scores les plus hauts de bonheur,
+        ainsi que pour le PIB/hab. Les variables support social et liberté de faire des choix sont elles aussi très élévées
+        par rapport aux autres clusters, avec une distribution beaucoup moins étendue mis a part plusieurs outliers.
+                 """)
+        
     elif number_cluster == 3 :
         fig=plt.figure(figsize = (10,5))
         spec = gridspec.GridSpec(ncols=2, nrows=1,
@@ -208,6 +253,12 @@ if options == 'PCA et clustering':
         ax2.set_ylabel('Social, Freedom, Generosity, corruption, pos/neg affect', color='seagreen')
         plt.setp(ax1.get_xticklabels(), rotation=30, ha="right")
         st.pyplot(fig);
+        
+        st.write("""
+        Le cluster n°3 (au milieu et en bas sur le graphique), correspond majoritairement aux pays de la région Europe centrale et Europe de l'Est.
+        Ce cluster correspond a des pays qui ont un score de bonheur moyen et pour lequel 
+        la distribution des différentes variables est proche du cluster 4 (au dessus de lui).
+                 """)
 
     elif number_cluster == 4 :
         fig=plt.figure(figsize = (10,5))
@@ -233,7 +284,15 @@ if options == 'PCA et clustering':
         ax2.set_ylabel('Social, Freedom, Generosity, corruption, pos/neg affect', color='seagreen')
         plt.setp(ax1.get_xticklabels(), rotation=30, ha="right")
         st.pyplot(fig);
-
+        
+        st.write("""
+        Le cluster n°4 (au milieu et en haut sur le graphique), correspond majoritairement aux pays de la région Amérique latine et Caraïbes.
+        Ce cluster correspond a des pays qui ont un score de bonheur moyen et pour lequel 
+        la distribution des différentes variables est proche du cluster 3 (en dessous de lui).
+        Ce cluster présente la plus grande hétérogénéité pour la variable générosité et beaucoup d'outliers, indiquant qu'au sein
+        de ce cluster il y a de grandes différences pour ce paramètre. Il faut noter que ce cluster est réparti pour
+        5 régions mondiales et de façon moins nette que pour le cluster 1 et 2 ce qui explique cette hétérogénéité.  
+                 """)
 
 if options == 'Méthodes de régression' : 
     st.title('Méthodes de régression')
