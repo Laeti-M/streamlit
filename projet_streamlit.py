@@ -15,6 +15,9 @@ import openpyxl
 
 st.set_page_config(layout="wide", page_icon=":art:", page_title="Custom Theming")
 
+primary_clr = st.get_option("theme.primaryColor")
+txt_clr = st.get_option("theme.textColor")
+
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
 
