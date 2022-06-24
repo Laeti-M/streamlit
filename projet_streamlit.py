@@ -13,6 +13,8 @@ from sklearn.linear_model import LinearRegression, RidgeCV, LassoCV, ElasticNetC
 from sklearn.metrics import mean_squared_error
 import openpyxl
 
+streamlit config show
+
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
 
