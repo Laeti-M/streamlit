@@ -13,10 +13,6 @@ from sklearn.linear_model import LinearRegression, RidgeCV, LassoCV, ElasticNetC
 from sklearn.metrics import mean_squared_error
 import openpyxl
 
-#st.set_page_config(layout="wide", page_icon=":art:", page_title="Custom Theming")
-#primary_clr = st.get_option("theme.primaryColor")
-#txt_clr = st.get_option("theme.textColor")
-
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
 
@@ -51,12 +47,17 @@ if options == 'Présentation des données' :
     var=pd.read_excel('Table_var.xlsx', index_col='N° colonne')
     st.dataframe(var)
     st.caption('Life Ladder (score de bonheur) est la variable cible dans l' ' analyse')
-    st.markdown('### *Choisissez un pays* : ')
-    pays=st.text_input('', value='')
-    st.write(df[df['Country name']==pays])
+    df_mean=df.groupby('year').mean().reset_index()
+    df_concat=pd.concat([df, df_mean], axis=0)
+    df_concat['Country name']=df_concat['Country name'].fillna('World')
+    df_sorted=df_concat.sort_values(by=['Country name'])
     
-    df2=df[df['Country name']==pays]
-    figure = px.line(df2, x="year", y="Life Ladder", title='Life Ladder evolution 📈')
+    pays = st.multiselect(
+     'Choisissez un ou plusieurs pays :',
+     df_sorted['Country name'].unique(), default='World')
+    
+    df_multi=df_concat[df_concat['Country name'].isin(pays)]
+    figure = px.line(df_multi, x="year", y="Life Ladder", color='Country name', title='Life Ladder evolution 📈')
     figure.update_layout(yaxis_range=[2,8])
     st.plotly_chart(figure)
 
