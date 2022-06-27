@@ -343,3 +343,13 @@ if options == 'Méthodes de régression' :
                   locationmode="country names", title='Carte des prédictions du score de bonheur 2022')
     fig.update_layout(title_x=0.5)
     st.plotly_chart(fig)
+    
+if options == 'Synthèse':  
+    st.title('Synthèse')
+    st.write("""Les **pays les plus heureux** possèdent tous les caractéristiques suivantes : """)
+    st.write("""   - **un ressenti social important** """)
+    st.write("""   - **un PIB par hab. important** """)
+    st.write("""   - **un sentiment de liberté important** """)
+    st.write("""Les **pays les moins heureux** possèdent tous les caractéristiques suivantes : """)
+    st.write("""   - **un PIB par hab. faible** """)
+    st.write("""   - **un ressenti de corruption important** """)
