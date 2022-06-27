@@ -13,6 +13,8 @@ from sklearn.linear_model import LinearRegression, RidgeCV, LassoCV, ElasticNetC
 from sklearn.metrics import mean_squared_error
 import openpyxl
 
+st.set_option('deprecation.showPyplotGlobalUse', False)
+
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
 
@@ -158,7 +160,6 @@ if options == 'PCA et clustering':
     plt.scatter(kmeans.cluster_centers_[:,0], kmeans.cluster_centers_[:,1], c='black', marker='s', s=30)
     plt.legend()
     st.pyplot()
-    st.set_option('deprecation.showPyplotGlobalUse', False)
     
     df_cluster = df.copy()
     df_cluster['cluster_kmeans']=y_kmeans
