@@ -18,7 +18,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
 
-options=st.sidebar.radio("Be App'Py 😀" ,['Contexte et objectifs du projet','Présentation des données', 'Visualisations', 'PCA et clustering', 'Méthodes de régression', 'Synthèse'])
+options=st.sidebar.radio("Be App'Py 😀" ,['Contexte et objectifs du projet','Présentation des données', 'Datavisualisations', 'PCA et clustering', 'Méthodes de régression', 'Synthèse'])
 if options == 'Contexte et objectifs du projet' :
     st.image('image.jpg', width=400)
     st.title("Projet Be App'Py 😀") 
@@ -66,11 +66,11 @@ if options == 'Présentation des données' :
     st.plotly_chart(figure)
 
 
-if options == 'Visualisations' :
+if options == 'Datavisualisations' :
 #ajouter du blabla + autres graph plotly ?
 #essayer de modif fig, et fig2 en plotly pour enlever le fond blanc
-    st.title("Quelques visualisations")
-    st.markdown('### Evolution du score de bonheur par pays et année')
+    st.title("Datavisualisations")
+    st.markdown('### Evolution du score de bonheur par pays et année 🌍')
     fig=px.choropleth(df.sort_values('year'),
                   locations="Country name",
                   color="Life Ladder",
