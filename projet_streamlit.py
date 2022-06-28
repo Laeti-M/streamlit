@@ -100,7 +100,7 @@ if options == 'Datavisualisations' :
 if options == 'PCA et clustering':  
     st.title('PCA et clustering')
     st.write("""
-    L'analyse en composantes principales (PCA pour Principal Component Analysis) est une méthode de réduction 
+    **L'analyse en composantes principales (PCA pour Principal Component Analysis)** est une méthode de réduction 
     de dimension qui consiste à réduire la complexité superflue d'un jeu de données en projetant 
     ses données dans un espace de plus petite dimension.
              """)
@@ -115,8 +115,8 @@ if options == 'PCA et clustering':
         st.markdown("👉 https://fr.wikipedia.org/wiki/Analyse_en_composantes_principales")
     st.write("""
     Une tâche fréquente en analyse de données consiste, à partir d'un ensemble d'observations,
-    à créer des groupes d'individus (clusters) de telle sorte que les individus d'un groupe donné aient tendance à être similaires, 
-    et en même temps aient tendance à être différents des individus des autres groupes.
+    à créer des **groupes d'individus (clusters)** de telle sorte que les **individus d'un groupe donné aient tendance à être similaires**, 
+    et en même temps aient tendance à **être différents des individus des autres groupes**.
     Les algorithmes de classification non supervisée répondent à cette tâche, ils utilisent un ensemble de données non-étiquetées ou non-labellisées et recherchent les structures naturelles dans les données.
              """)
     with st.expander("En savoir plus sur le clustering :"):
@@ -130,9 +130,9 @@ if options == 'PCA et clustering':
     """)
         st.markdown("👉 https://fr.wikipedia.org/wiki/K-moyennes")
         
-    st.markdown('### Méthodes : ')
+    st.markdown('### Méthodologie et clusters : ')
     st.write('La PCA a été appliqué sur tout le dataset, excepté la variable cible (Life Ladder) et la variable country name.')
-    st.write('KMeans a ensuite été utilisé sur les données issues de la PCA, pour visualiser les 4 clusters créés en 2D, visibles ci-dessous.')
+    st.write('KMeans a ensuite été utilisé sur les données issues de la PCA, pour visualiser les **4 clusters créés en 2D**, visibles ci-dessous.')
     st.info('Après application de la PCA et en utilisant uniquement les 2 premières composantes principales, le % de variance expliquée conservée est de 36.5.')
     
     
