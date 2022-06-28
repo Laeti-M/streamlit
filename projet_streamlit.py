@@ -202,7 +202,7 @@ if options == 'PCA et clustering':
         Le cluster n°1 (a droite sur le graphique), correspond majoritairement aux pays de la région Afrique sub-saharienne.
         On peut observer avec les boxplots, que ce cluster regroupe les pays avec les scores les plus faibles de bonheur,
         ainsi que pour le PIB/hab. On retrouve une grande hétérogénéité pour la variable
-        corruption avec beaucoup d'outliers, tout comme pour générosité ou même le PIB.
+        corruption avec beaucoup d'outliers, tout comme pour générosité ou même le PIB/hab.
                  """)
         
     elif number_cluster == 2 :
@@ -333,16 +333,17 @@ if options == 'Méthodes de régression' :
     df_2022=pd.DataFrame({'Bonheur 2022': df_2022_predict}, index=dataname)
 
 # Choix pays --> score de bonheur
-    st.markdown('### *Choisissez un pays pour afficher la prévision de son score de bonheur en 2022* : ')
+    st.markdown('### Choisissez un pays pour afficher la prévision de son score de bonheur en 2022 : ')
     bonheur=st.text_input('', value='')
     st.write(df_2022[df_2022.index==bonheur])
     st.write('')
     
-# carte du monde et prédiction 2022   
+# carte du monde et prédiction 2022
+    st.markdown('### Carte des prédictions du score de bonheur 2022 : ')
     fig=px.choropleth(df_2022,
                   locations=df_2022.index,
                   color="Bonheur 2022",
-                  locationmode="country names", title='Carte des prédictions du score de bonheur 2022')
+                  locationmode="country names", title='Score prédictif du bonheur en 2022')
     fig.update_layout(title_x=0.5)
     st.plotly_chart(fig)
     
