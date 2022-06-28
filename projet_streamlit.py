@@ -82,7 +82,7 @@ if options == 'Visualisations' :
     fig1=px.box(df, x='Regional indicator', y='Life Ladder')
     st.plotly_chart(fig1)
 
-    st.markdown('### Top 10 des pays les plus heureux et les moins heureus en moyenne depuis 2005')
+    st.markdown('### Top 10 des pays les plus heureux et les moins heureux en moyenne depuis 2005')
     fig2=plt.figure(figsize=(10, 5))
     df2 = pd.DataFrame(df.groupby("Country name").mean())
     df2 = df2.reset_index()
