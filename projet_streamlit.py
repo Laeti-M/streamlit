@@ -50,7 +50,7 @@ if options == 'Présentation des données' :
     st.markdown("## Explication des variables 🔎")
     var=pd.read_excel('Table_var.xlsx', index_col='N° colonne')
     st.dataframe(var)
-    st.caption('Life Ladder (score de bonheur) est la variable cible dans l' ' analyse')
+    st.caption('Life Ladder (score de bonheur) est la variable cible de cette analyse')
     df_mean=df.groupby('year').mean().reset_index()
     df_concat=pd.concat([df, df_mean], axis=0)
     df_concat['Country name']=df_concat['Country name'].fillna('World')
