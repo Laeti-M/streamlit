@@ -44,8 +44,8 @@ with st.form('Auteurs :') :
 
 if options == 'Présentation des données' :
     st.title("Présentation du jeu de données")
-    st.write('Le jeu de données regroupe des données de 2005 à 2021, réprésentant des scores de bonheur de 160 pays ainsi que plusieurs variables explicatives décrites dans le tableau ci-dessous.')
-    st.write('Après nettoyage du dataset, le jeu de données compte 2007 lignes pour 12 colonnes.')
+    st.write('Le jeu de données regroupe des données de 2005 à 2021 et il réprésent les scores de bonheur de 160 pays ainsi que plusieurs variables explicatives décrites dans le tableau ci-dessous.')
+    st.write('Après nettoyage du dataset, le jeu de données compte 2007 lignes pour 12 colonnes :')
     st.dataframe(df)
     st.markdown("## Explication des variables 🔎")
     var=pd.read_excel('Table_var.xlsx', index_col='N° colonne')
@@ -55,7 +55,7 @@ if options == 'Présentation des données' :
     df_concat=pd.concat([df, df_mean], axis=0)
     df_concat['Country name']=df_concat['Country name'].fillna('World')
     df_sorted=df_concat.sort_values(by=['Country name'])
-    
+    st.markdown("## Evolution du score de bonheur 📈 ")
     pays = st.multiselect(
      'Choisissez un ou plusieurs pays :',
      df_sorted['Country name'].unique(), default='World')
