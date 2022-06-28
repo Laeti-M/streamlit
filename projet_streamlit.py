@@ -23,11 +23,12 @@ if options == 'Contexte et objectifs du projet' :
     st.image('image.jpg', width=400)
     st.title("Projet Be App'Py 😀") 
     st.markdown("## Contexte du projet")
-    st.write("Aujourd’hui le rapport sur le bonheur dans le monde (**World Happiness Report** https://worldhappiness.report/) est une enquête de référence sur l'état du bonheur dans le monde. Le rapport continue de gagner en reconnaissance mondiale, les gouvernements, les organisations et la société civile utilisant de plus en plus les indicateurs de bonheur pour éclairer leurs décisions politiques. Des experts dans divers domaines - économie, psychologie, analyse d'enquêtes, statistiques nationales, santé, politiques publiques et autres - décrivent comment les mesures du bien-être peuvent être utilisées efficacement pour évaluer les progrès des nations. Les rapports passent en revue l'état du bonheur dans le monde d'aujourd'hui et montrent comment la nouvelle science du bonheur explique les variations personnelles et nationales du bonheur.")
+    st.write("Des experts dans divers domaines (économie, psychologie, analyse d'enquêtes, statistiques nationales, santé, politiques publiques et autres) décrivent comment les mesures du bien-être peuvent être utilisées efficacement pour évaluer les progrès des nations. Les rapports passent en revue l'état du bonheur dans le monde d'aujourd'hui et montrent comment la nouvelle science du bonheur explique les variations personnelles et nationales du bonheur.")
     st.markdown("## Objectifs")
-    st.write("Deux objectifs ont été définis pour ce projet :"
-         "1- utilisation de méthodes de clustering pour déterminer quelles variables jouent un rôle dans le regroupement des pays en fonction du score de bonheur." 
-         "2- prédiction du score de bonheur des pays pour l’année 2022 en utilisant des méthodes de régression.")
+    st.write("Deux **OBJECTIFS** ont été définis pour ce projet :")
+    st.write("1. Utilisation de **méthodes de clustering** pour déterminer quelles variables jouent un rôle dans le regroupement des pays en fonction du score de bonheur.") 
+    st.write("2. **Prédiction** du score de bonheur des pays pour l’année 2022 en utilisant des méthodes de régression.")
+
 
 with st.form('Auteurs :') :
     st.sidebar.markdown('#### Auteurs :')
