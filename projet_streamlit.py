@@ -350,7 +350,7 @@ if options == 'Méthodes de régression' :
 if options == 'Synthèse':  
     st.title('Synthèse')
     st.write("""Les **pays les plus heureux** possèdent tous les caractéristiques suivantes : """)
-    st.write("""   - **un ressenti social important** """)
+    st.write("""   - **un soutien social important** """)
     st.write("""   - **un PIB par hab. important** """)
     st.write("""   - **un sentiment de liberté important** """)
     st.write("""Les **pays les moins heureux** possèdent tous les caractéristiques suivantes : """)
