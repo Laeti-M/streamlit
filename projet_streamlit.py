@@ -78,11 +78,11 @@ if options == 'Visualisations' :
                   animation_frame="year")
     st.plotly_chart(fig)
 
-    st.markdown('### Boxplot du score de bonheur en fonction des régions du monde')
+    st.markdown('### Boxplot du score de bonheur par région du monde')
     fig1=px.box(df, x='Regional indicator', y='Life Ladder')
     st.plotly_chart(fig1)
 
-    st.markdown('### Top 5 des pays les plus heureux en moyenne depuis 2005 (a gauche), les moins heureux en moyenne depuis 2005 (a droite) ')
+    st.markdown('### Top 10 des pays les plus heureux et les moins heureus en moyenne depuis 2005')
     fig2=plt.figure(figsize=(10, 5))
     df2 = pd.DataFrame(df.groupby("Country name").mean())
     df2 = df2.reset_index()
