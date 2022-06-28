@@ -170,7 +170,7 @@ if options == 'PCA et clustering':
     cluster_3=df_cluster[df_cluster['cluster_kmeans']==2]
     cluster_4=df_cluster[df_cluster['cluster_kmeans']==3]
        
-    st.markdown('### *Choix du n° de cluster* : ')
+    st.markdown('### Choix du n° de cluster et ses caractéristiques : ')
     number_cluster=st.selectbox('', [1,2,3,4])
         
     if number_cluster == 1 :
