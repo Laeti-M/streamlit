@@ -70,7 +70,7 @@ if options == 'Datavisualisations' :
 #ajouter du blabla + autres graph plotly ?
 #essayer de modif fig, et fig2 en plotly pour enlever le fond blanc
     st.title("Datavisualisations")
-    st.markdown('### Evolution du score de bonheur par pays et année 🌍')
+    st.markdown('### Evolution du score de bonheur par pays et année 📈 ')
     fig=px.choropleth(df.sort_values('year'),
                   locations="Country name",
                   color="Life Ladder",
@@ -78,11 +78,11 @@ if options == 'Datavisualisations' :
                   animation_frame="year")
     st.plotly_chart(fig)
 
-    st.markdown('### Boxplot du score de bonheur par région du monde')
+    st.markdown('### Boxplot du score de bonheur par région du monde 🌍')
     fig1=px.box(df, x='Regional indicator', y='Life Ladder')
     st.plotly_chart(fig1)
 
-    st.markdown('### Top 10 des pays les plus heureux et les moins heureux en moyenne depuis 2005')
+    st.markdown('### Top 10 des pays les plus heureux 🙂 et les moins heureux 🙁 en moyenne depuis 2005')
     fig2=plt.figure(figsize=(10, 5))
     df2 = pd.DataFrame(df.groupby("Country name").mean())
     df2 = df2.reset_index()
