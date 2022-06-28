@@ -18,7 +18,7 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 df=pd.read_csv('df_all.csv')
 df=df.drop('Unnamed: 0',axis=1)
 
-options=st.sidebar.radio("Options : " ,['Contexte et objectifs du projet','Présentation des données', 'Visualisations', 'PCA et clustering', 'Méthodes de régression', 'Synthèse'])
+options=st.sidebar.radio("Be App'Py 😀" ,['Contexte et objectifs du projet','Présentation des données', 'Visualisations', 'PCA et clustering', 'Méthodes de régression', 'Synthèse'])
 if options == 'Contexte et objectifs du projet' :
     st.image('image.jpg', width=400)
     st.title("Projet Be App'Py 😀") 
