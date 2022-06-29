@@ -28,8 +28,8 @@ if options == 'Contexte et objectifs du projet' :
     st.markdown("## Objectifs")
     st.write("""
     Deux **OBJECTIFS** ont été définis pour ce projet :
-    1 Utilisation de **méthodes de clustering** pour déterminer quelles variables jouent un rôle dans le regroupement des pays en fonction du score de bonheur.
-    2 **Prédiction** du score de bonheur des pays pour l’année 2022 en utilisant des méthodes de régression. """)
+    - Utilisation de **méthodes de clustering** pour déterminer quelles variables jouent un rôle dans le regroupement des pays en fonction du score de bonheur.
+    - **Prédiction** du score de bonheur des pays pour l’année 2022 en utilisant des méthodes de régression. """)
 
 with st.form('Auteurs :') :
     st.sidebar.markdown('#### Auteurs :')
