@@ -351,7 +351,7 @@ if options == 'Synthèse':
     st.title('Synthèse')
     st.write("""
     Les **pays les plus heureux** 😀 possèdent tous les caractéristiques suivantes : 
-    - **un PIB par hab important**
+    - **un PIB par hab. important**
     - **un soutien social important** 
     - **un sentiment de liberté important** """)
     st.write("""
